@@ -1,0 +1,24 @@
+/* CSS Document */
+.main{
+    background: #efefef;
+    border-radius: 5px;
+    padding: 20px;
+}
+.input1{
+    background-color: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    color: #363636;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    width: 410px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 8px;
+}
+
+.input2{
+    margin-top: 20px;
+    background-color: #F5F5F5;
+    cursor:  pointer;
+}
