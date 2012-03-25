@@ -17,12 +17,27 @@
 	<td valigh=middle class=main>
 	    <input type=text id=pw class=input1>
 	    <br>
-	    <button id=re class="input1 input2" onClick="genpw('pw');return false;">Regenerate</button>
+	    <b>Use:</b>
+	    <br>
+	    <label><input onChange="refreshpw();" type="checkbox" id=arg1 name=arg1 checked>small letters</label>
+	    <label><input onChange="refreshpw();" type="checkbox" id=arg2 name=arg2>big letters</label>
+	    <label><input onChange="refreshpw();" type="checkbox" id=arg3 name=arg3 checked>numbers</label>
+	    <label><input onChange="refreshpw();" type="checkbox" id=arg4 name=arg4>punctuation</label>
+	    <br>
+	    <button id=re class="input1 input2" onClick="refreshpw();return false;">Regenerate</button>
+	</td>
+    </tr>
+    <tr>
+	<td valigh=middle class=main>
+	    Source <a href='https://github.com/aleksandr-rakov/password-generator'>https://github.com/aleksandr-rakov/password-generator</a>
 	</td>
     </tr>
 </table>
 <script type="text/javascript">
-    genpw('pw');
+    function refreshpw(){
+	genpw('pw','arg1','arg2','arg3','arg4');
+    }
+    refreshpw('pw');
 </script>
 </body>
 </html>
