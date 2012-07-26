@@ -34,18 +34,19 @@
     </tr>
 </table>
 <script type="text/javascript">
+    var pw_len;
     function refreshpw(){
-	genpw('pw','arg1','arg2','arg3','arg4');
+	genpw('pw',pw_len,'arg1','arg2','arg3','arg4');
     }
-    refreshpw('pw');
     new Dragdealer('my-slider',
     {
-        steps: 10,
+        x : 0.5,
+        steps: 11,
         snap : true,
         animationCallback: function(x, y){
             pw_len=parseInt(3 + x * 57);
             document.getElementById('drag-helper').innerHTML=pw_len + ' signs';
-            genpw('pw','arg1','arg2','arg3','arg4');
+            refreshpw('pw');
         }
     });
 </script>
