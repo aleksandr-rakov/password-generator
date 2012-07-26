@@ -1,10 +1,11 @@
+var pw_len=15;
 function genpw(id,arg1,arg2,arg3,arg4){
     obj=document.getElementById(id);
     arg1=document.getElementById(arg1);
     arg2=document.getElementById(arg2);
     arg3=document.getElementById(arg3);
     arg4=document.getElementById(arg4);
-    obj.value=GeneratePassword(20,arg1.checked,arg2.checked,arg3.checked,arg4.checked);
+    obj.value=GeneratePassword(pw_len,arg1.checked,arg2.checked,arg3.checked,arg4.checked);
 }
 
 function GeneratePassword(length,arg1,arg2,arg3,arg4) {
