@@ -16,7 +16,7 @@
 	<td valign="middle" align="center" heihgt="100%">
 	    <div class=main align=center>
 		<input type=text id=pw class=input1>
-		<div id="my-slider" class="dragdealer">
+		<div id="my-slider" class="dragdealer" title="Password length">
                     <div class="red-bar handle" id="drag-helper">drag me</div>
                 </div>
 		<br>
@@ -41,7 +41,7 @@
     new Dragdealer('my-slider',
     {
         x : 0.5,
-        steps: 11,
+        steps: 21,
         snap : true,
         animationCallback: function(x, y){
             pw_len=parseInt(3 + x * 57);
