@@ -19,17 +19,16 @@
 		<div id="my-slider" class="dragdealer" title="Password length">
                     <div class="red-bar handle" id="drag-helper">drag me</div>
                 </div>
-		<br>
-		<label title="Use small letters"><input onChange="refreshpw();" type="checkbox" id=arg1 name=arg1 checked>small letters</label>
-		<label title="Use big letters"><input onChange="refreshpw();" type="checkbox" id=arg2 name=arg2>big letters</label>
-		<label title="Use numbers"><input onChange="refreshpw();" type="checkbox" id=arg3 name=arg3 checked>numbers</label>
-		<label title="Use punctuation"><input onChange="refreshpw();" type="checkbox" id=arg4 name=arg4>punctuation</label>
-		<br>
+                <div id="boxes">
+		    <label title="Use small letters"><input onChange="refreshpw();" type="checkbox" id=arg1 name=arg1 checked>small letters</label>
+		    <label title="Use big letters"><input onChange="refreshpw();" type="checkbox" id=arg2 name=arg2>big letters</label>
+		    <label title="Use numbers"><input onChange="refreshpw();" type="checkbox" id=arg3 name=arg3 checked>numbers</label>
+		    <label title="Use punctuation"><input onChange="refreshpw();" type="checkbox" id=arg4 name=arg4>punctuation</label>
+		</div>
 		<button id=re class="input2" onClick="refreshpw();return false;" title="Generate!">Generate password</button>
-		<br>
-		<br>
+		<div id="footer">
 		<small>View source <a href='https://github.com/aleksandr-rakov/password-generator'>https://github.com/aleksandr-rakov/password-generator</a></small>
-		<div id="test"></div>
+		</div>
 	</td>
     </tr>
 </table>
@@ -40,8 +39,8 @@
     }
     new Dragdealer('my-slider',
     {
-        x : 0.5,
-        steps: 21,
+        x : 0.09,
+        steps: 57,
         snap : true,
         animationCallback: function(x, y){
             pw_len=parseInt(3 + x * 57);

@@ -23,7 +23,7 @@ small{
     text-align: center;
 }
 .input2{
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 18px;
     color: #ffffff;
     padding: 0 15px 0 15px;
@@ -45,7 +45,7 @@ small{
 }
 
 #my-slider {
-    margin-top: 10px;
+    margin-top: 15px;
     border: #ffffff 1px solid;
     border-radius: 5px;
 }
@@ -55,4 +55,13 @@ small{
 label{
     width: 150px;
     display: inline-block;
+    cursor: pointer;
+    line-height: 48px;
+}
+#footer {
+    padding: 30px 0 3px 0;
+}
+#boxes {
+    margin-top: 15px;
+    padding: 1px 0 1px 0;
 }
