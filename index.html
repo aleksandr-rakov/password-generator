@@ -5,7 +5,9 @@
     <title>Simple password generator</title>
     <meta content="password generator" name="keywords">
     <meta content="simple password-generator" name="description">
+    <link rel="stylesheet" href="dragdealer.css" type="text/css" media="screen">
     <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    <script type="text/javascript" src="dragdealer.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" class="h100">
@@ -14,26 +16,38 @@
 	<td valign="middle" align="center" heihgt="100%">
 	    <div class=main align=center>
 		<input type=text id=pw class=input1>
-		<br>
-		<br>
-		<label title="Use small letters"><input onChange="refreshpw();" type="checkbox" id=arg1 name=arg1 checked>small letters</label>
-		<label title="Use big letters"><input onChange="refreshpw();" type="checkbox" id=arg2 name=arg2>big letters</label>
-		<label title="Use numbers"><input onChange="refreshpw();" type="checkbox" id=arg3 name=arg3 checked>numbers</label>
-		<label title="Use punctuation"><input onChange="refreshpw();" type="checkbox" id=arg4 name=arg4>punctuation</label>
-		<br>
+		<div id="my-slider" class="dragdealer" title="Password length">
+                    <div class="red-bar handle" id="drag-helper">drag me</div>
+                </div>
+                <div id="boxes">
+		    <label title="Use small letters"><input onChange="refreshpw();" type="checkbox" id=arg1 name=arg1 checked>small letters</label>
+		    <label title="Use big letters"><input onChange="refreshpw();" type="checkbox" id=arg2 name=arg2>big letters</label>
+		    <label title="Use numbers"><input onChange="refreshpw();" type="checkbox" id=arg3 name=arg3 checked>numbers</label>
+		    <label title="Use punctuation"><input onChange="refreshpw();" type="checkbox" id=arg4 name=arg4>punctuation</label>
+		</div>
 		<button id=re class="input2" onClick="refreshpw();return false;" title="Generate!">Generate password</button>
-		<br>
-		<br>
+		<div id="footer">
 		<small>View source <a href='https://github.com/aleksandr-rakov/password-generator'>https://github.com/aleksandr-rakov/password-generator</a></small>
-	    </div>
+		</div>
 	</td>
     </tr>
 </table>
 <script type="text/javascript">
+    var pw_len;
     function refreshpw(){
-	genpw('pw','arg1','arg2','arg3','arg4');
+	genpw('pw',pw_len,'arg1','arg2','arg3','arg4');
     }
-    refreshpw('pw');
+    new Dragdealer('my-slider',
+    {
+        x : 0.09,
+        steps: 57,
+        snap : true,
+        animationCallback: function(x, y){
+            pw_len=parseInt(3 + x * 57);
+            document.getElementById('drag-helper').innerHTML=pw_len + ' signs';
+            refreshpw('pw');
+        }
+    });
 </script>
 </div>
 </body>
