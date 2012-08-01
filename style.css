@@ -53,13 +53,16 @@ small{
     border-radius: 5px;
 }
 label{
-    width: 150px;
+    width: 148px;
     display: inline-block;
     cursor: pointer;
     line-height: 48px;
+    border: 1px #ffffff solid;
+    border-radius: 5px;
+    background-color: #dddddd;
 }
 #footer {
-    padding: 30px 0 3px 0;
+    padding: 30px 0 0 0;
 }
 #boxes {
     margin-top: 15px;

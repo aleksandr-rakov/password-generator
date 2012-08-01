@@ -2,7 +2,7 @@
  <head>
     <meta charset="utf-8">
     <meta name="author" content="doggy" >
-    <title>Simple password generator</title>
+    <title>Simple online password generator</title>
     <meta content="password generator" name="keywords">
     <meta content="simple password-generator" name="description">
     <link rel="stylesheet" href="dragdealer.css" type="text/css" media="screen">
@@ -20,14 +20,14 @@
                     <div class="red-bar handle" id="drag-helper">drag me</div>
                 </div>
                 <div id="boxes">
-		    <label title="Use small letters"><input onChange="refreshpw();" type="checkbox" id=arg1 name=arg1 checked>small letters</label>
-		    <label title="Use big letters"><input onChange="refreshpw();" type="checkbox" id=arg2 name=arg2>big letters</label>
-		    <label title="Use numbers"><input onChange="refreshpw();" type="checkbox" id=arg3 name=arg3 checked>numbers</label>
-		    <label title="Use punctuation"><input onChange="refreshpw();" type="checkbox" id=arg4 name=arg4>punctuation</label>
+		    <label id="l1" title="Use small letters"><input onChange="refreshpw();" type="checkbox" id=arg1 name=arg1 checked>small letters</label>
+		    <label id="l2" title="Use big letters"><input onChange="refreshpw();" type="checkbox" id=arg2 name=arg2>big letters</label>
+		    <label id="l3" title="Use numbers"><input onChange="refreshpw();" type="checkbox" id=arg3 name=arg3 checked>numbers</label>
+		    <label id="l4" title="Use punctuation"><input onChange="refreshpw();" type="checkbox" id=arg4 name=arg4>punctuation</label>
 		</div>
 		<button id=re class="input2" onClick="refreshpw();return false;" title="Generate!">Generate password</button>
 		<div id="footer">
-		<small>View source <a href='https://github.com/aleksandr-rakov/password-generator'>https://github.com/aleksandr-rakov/password-generator</a></small>
+		<small>Source: <a href='https://github.com/aleksandr-rakov/password-generator'>https://github.com/aleksandr-rakov/password-generator</a></small>
 		</div>
 	</td>
     </tr>
@@ -47,6 +47,12 @@
             document.getElementById('drag-helper').innerHTML=pw_len + ' signs';
             refreshpw('pw');
         }
+    });
+    labels=['l1','l2','l3','l4'];
+    labels.forEach(function (el_id){
+        el=document.getElementById(el_id);
+        el.onselectstart = function () { return false; } // ie
+        el.onmousedown = function () { return false; } // mozilla
     });
 </script>
 </div>
